@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" weight="400">
+    <title>Vuelos</title>
+    <style>
+        figcaption {
+        color: black;
+        font-size: 13px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Elige tu Destino</h1>
+    <img src="https://media.tacdn.com/media/attractions-splice-spp-674x446/0e/3b/66/8f.jpg"
+    alt="Descripcion de la imagen" width="200" 
+    >
+    <figcaption>
+        Vuelo a {{vuelos[0]}}
+    </figcaption>
+    <figcaption>
+     Saliendo desde Buenos Aires
+    </figcaption>
+    <a href="{{ url_for('vuelos_destino', vuelos=vuelos[0])}}">Consultar Disponibilidad</a>
+    <br>
+
+    <img src="https://images.contentstack.io/v3/assets/blt06f605a34f1194ff/bltd426c9dd42a5bf5c/678a9456bf520470087cf015/iStock-1131743616-HEADERMOBILE.jpg?fit=crop&disable=upscale&auto=webp&quality=60&crop=smart" 
+    alt="Descripcion de la imagen" width="200"
+    >    
+    <figcaption>
+        Vuelo a {{vuelos[1]}}
+    </figcaption>
+    <figcaption>
+     Saliendo desde Buenos Aires
+    </figcaption>
+    <a href="{{ url_for('vuelos_destino', vuelos=vuelos[1])}}">Consultar Disponibilidad</a>
+    <br>
+    
+    <img src="https://a.travel-assets.com/findyours-php/viewfinder/images/res70/77000/77537-Peru.jpg" 
+    alt="Descripcion de la imagen" width="200"
+    >
+        <figcaption>
+        Vuelo a {{vuelos[2]}}
+    </figcaption>
+    <figcaption>
+     Saliendo desde Buenos Aires
+    </figcaption>
+    <a href="{{ url_for('vuelos_destino', vuelos=vuelos[2])}}">Consultar Disponibilidad</a>
+    <br>
+    <img src="https://www.latamairlines.com/content/dam/latamxp/sites/vamos-latam/news-nieve-sudam%C3%A9rica-may25/bariloche/Modelo-3.png" 
+    alt="Descripcion de la imagen" width="200"
+    >
+    <figcaption>
+        Vuelo a {{vuelos[3]}}
+    </figcaption>
+    <figcaption>
+     Saliendo desde Buenos Aires
+    </figcaption>
+    <a href="{{ url_for('vuelos_destino', vuelos=vuelos[3])}}">Consultar Disponibilidad</a>
+    <br>
+    <img src="https://images.contentstack.io/v3/assets/blt06f605a34f1194ff/blt67e44a131f25b895/679f2c7f1a0e5748e2dbfa56/iStock-2136051137-2-Header_Mobile.jpg?fit=crop&disable=upscale&auto=webp&quality=60&crop=smart" 
+    alt="Descripcion de la imagen" width="200"
+    >
+    <figcaption>
+        Vuelo a {{vuelos[4]}}
+    </figcaption>
+    <figcaption>
+     Saliendo desde Buenos Aires
+    </figcaption>
+    <a href="{{ url_for('vuelos_destino', vuelos=vuelos[4])}}">Consultar Disponibilidad</a>
+    <br>
+</body>
+
+</html>

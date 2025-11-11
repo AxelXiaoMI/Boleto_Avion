@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Vuelos Mas Baratos 🤑</h1>
+    <img src="https://images.seeklogo.com/logo-png/21/1/aerolineas-argentinas-logo-png_seeklogo-217527.png"
+    alt="Descripcion de la imagen" width="80" 
+    >
+    <figcaption>
+        Vuelo a {{vuelos}}
+    </figcaption>
+    <figcaption>
+     Saliendo desde Buenos Aires
+    </figcaption>
+    <figcaption >
+        Por {{aerolinea[0]}}
+    </figcaption>
+    <figcaption >
+        Precio por persona desde: ${{precio[0]}}
+    </figcaption>
+    <a href="{{ url_for('comprar_boleto', vuelos = vuelos, aerolinea = aerolinea[0], precio = precio[0])}}">Comprar :D</a>
+    <br>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fe/Latam-logo_-v_%28Indigo%29.svg"
+    alt="Descripcion de la imagen" width="80" 
+    >
+    <figcaption>
+        Vuelo a {{vuelos}}
+    </figcaption>
+    <figcaption>
+     Saliendo desde Buenos Aires
+    </figcaption>
+    <figcaption >
+        Por {{aerolinea[1]}}
+    </figcaption>
+    <figcaption >
+        Precio por persona desde: ${{precio[1]}}
+    </figcaption>
+    <a href="{{ url_for('comprar_boleto', vuelos = vuelos, aerolinea = aerolinea[1], precio = precio[1])}}">Comprar :D</a>
+    <br>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Austral_L%C3%ADneas_A%C3%A9reas.svg/1280px-Austral_L%C3%ADneas_A%C3%A9reas.svg.png"
+    alt="Descripcion de la imagen" width="80" 
+    >
+    <figcaption>
+        Vuelo a {{vuelos}}
+    </figcaption>
+    <figcaption>
+     Saliendo desde Buenos Aires
+    </figcaption>
+    <figcaption >
+        Por {{aerolinea[2]}}
+    </figcaption>
+    <figcaption >
+        Precio por persona desde: ${{precio[2]}}
+    </figcaption>
+    <a href="{{ url_for('comprar_boleto', vuelos = vuelos, aerolinea = aerolinea[2], precio = precio[2])}}">Comprar :D</a>
+    <br>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROgfMbUfcPPlXGnggHQindlG5XbC9TnmSC1w&s"
+    alt="Descripcion de la imagen" width="80" 
+    >
+    <figcaption>
+        Vuelo a {{vuelos}}
+    </figcaption>
+    <figcaption>
+     Saliendo desde Buenos Aires
+    </figcaption>
+    <figcaption >
+        Por {{aerolinea[3]}}
+    </figcaption>
+    <figcaption >
+        Precio por persona desde: ${{precio[3]}}
+    </figcaption>
+    <a href="{{ url_for('comprar_boleto', vuelos = vuelos, aerolinea = aerolinea[3], precio = precio[3])}}">Comprar :D</a>
+    <br>
+    <img src="https://www.liderlogo.es/wp-content/uploads/2022/12/Iberia-Simbolo-1.png"
+    alt="Descripcion de la imagen" width="80" 
+    >
+    <figcaption>
+        Vuelo a {{vuelos}}
+    </figcaption>
+    <figcaption>
+     Saliendo desde Buenos Aires
+    </figcaption>
+    <figcaption >
+        Por {{aerolinea[4]}}
+    </figcaption>
+    <figcaption >
+        Precio por persona desde: ${{precio[4]}}
+    </figcaption>
+    <a href="{{ url_for('comprar_boleto', vuelos = vuelos, aerolinea = aerolinea[4], precio = precio[4])}}">Comprar :D</a>
+    <br>
+    </h1>
+</body>
+</html>

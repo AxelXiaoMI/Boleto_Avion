@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Samurai Fly</title>
+</head>
+<body>
+    <h1>Registrar Usuario</h1>
+      {% if mensaje %}
+        <h3>{{mensaje}}</h3>
+      {% endif %}
+<!--Esto es para los formularios asi obtengo las variables de nombre, apellido y edad
+para ponerlos en la base de datos-->
+      <form action="/registrar_usuario" method="POST">
+        <label for="nombre">Nombre: </label>
+        <input type="text" id="nombre" name="nombre" placeholder="Raul" required>   
+        <br>
+        <label for="apellido">Apellido: </label>
+        <input type="text" id="apellido" name="apellido" placeholder="Gomez" required>  
+        <br>
+        <label for="edad">Edad: </label>
+        <input type="tel" id="edad" name="edad" placeholder="20" required>
+        <br>
+        <label for="sexo">Genero: </label>
+        <input type="radio" id="sexo" name="sexo" value="Masculino" required>Masculino
+        <input type="radio" id="sexo" name="sexo" value="Femenino" required>Femenino
+        <br>
+        <label for="nacionalidad">Nacionalidad: </label>
+        <input type="text" id="nacionalidad" name="nacionalidad" placeholder="Argentina" required>
+        <br>
+        <label for="pasaporte">Numero de Pasaporte: </label>
+        <input type="tel" id="pasaporte" name="pasaporte" placeholder="1234567890" required>
+        <br>
+        <label for="telefono">Numero de Telefono: </label>
+        <input type="tel" id="telefono" name="telefono" placeholder="1234567890" required>
+        <br>
+        <label for="email">Correo: </label>
+        <input type="email" id="email" name="email" placeholder="ejemplo@ejemplo.com" required>
+        <br>
+        <label for="contraseña">Contraseña: </label>
+        <input type="password" id="contraseña" name="contraseña" required>
+        <br>
+        <button type="submit">Enviar</button>
+      </form>
+</body>
+</html>
