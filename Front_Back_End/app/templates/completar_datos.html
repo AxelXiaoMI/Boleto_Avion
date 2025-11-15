@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos</title>
+</head>
+<body>
+    <h1>Complete los siguientes datos 😁</h1>
+    {% for adulto in range(adultos) %}
+        <h4>Adulto {{adulto +1}}</h4>
+        <form action="" method="POST">
+            <label for="nombre">Nombre/s: </label>
+            <input type="text" id="nombre" name="nombre" placeholder="Raul" required>   
+            <br>
+
+            <label for="apellido">Apellido/s: </label>
+            <input type="text" id="apellido" name="apellido" placeholder="Gomez" required>  
+            <br>
+
+            <label for="pais_residencia">Pais de Residencia: </label>
+            <input type="text" id="pais_residencia" name="pais_residencia" placeholder="Argentina" required>
+            <br>
+
+            <label for="tipo_documento">Tipo de Documento:</label>
+            <input type="radio" name="tipo_documento" id="tipo_documento" value="DNI" required> DNI
+            <input type="radio" name="tipo_documento" id="tipo_documento" value="Pasaporte" required> Pasaporte
+            <br>
+            <label for="num_documento">Numero: </label>
+            <input type="tel" id="num_documento" name="num_documento" placeholder="1234567890" required>
+            <br>
+
+            <label for="email">Correo: </label>
+            <input type="email" id="email" name="email" placeholder="ejemplo@ejemplo.com" required>
+            <br>
+
+            <label for="fecha_nacimiento">Fecha de Nacimiento: </label>
+            <input type="date" id="fecha_nacimiento" name="fecha_nacimiento"  required>
+            <br>
+
+            <label for="sexo">Genero: </label>
+            <input type="radio" id="sexo" name="sexo" value="Femenino" required>Femenino
+            <input type="radio" id="sexo" name="sexo" value="Masculino" required>Masculino
+            <br>
+    {% endfor %}
+    {% for menor in range(cant_menores) %}
+        <h4>Niño {{menor + 1}}</h4>
+        <form action="" method="POST">
+            <label for="nombre">Nombre/s: </label>
+            <input type="text" id="nombre" name="nombre" placeholder="Raul" required>   
+            <br>
+
+            <label for="apellido">Apellido/s: </label>
+            <input type="text" id="apellido" name="apellido" placeholder="Gomez" required>  
+            <br>
+
+            <label for="pais_residencia">Pais de Residencia: </label>
+            <input type="text" id="pais_residencia" name="pais_residencia" placeholder="Argentina" required>
+            <br>
+
+            <label for="tipo_documento">Tipo de Documento:</label>
+            <input type="radio" name="tipo_documento" id="tipo_documento" value="DNI" required> DNI
+            <input type="radio" name="tipo_documento" id="tipo_documento" value="Pasaporte" required> Pasaporte
+            <br>
+            <label for="num_documento">Numero: </label>
+            <input type="tel" id="num_documento" name="num_documento" placeholder="1234567890" required>
+            <br>
+
+            <label for="email">Correo: </label>
+            <input type="email" id="email" name="email" placeholder="ejemplo@ejemplo.com" required>
+            <br>
+
+            <label for="fecha_nacimiento">Fecha de Nacimiento: </label>
+            <input type="date" id="fecha_nacimiento" name="fecha_nacimiento"  required>
+            <br>
+
+            <label for="sexo">Genero: </label>
+            <input type="radio" id="sexo" name="sexo" value="Femenino" required>Femenino
+            <input type="radio" id="sexo" name="sexo" value="Masculino" required>Masculino
+            <br>
+    {% endfor %}
+            <br>
+            <label for="seguro">Elija que seguro quiere 🛡️:
+            <br>
+            <input type="radio" id="seguro" name="seguro" value="ninguno" required>Ninguno $0
+            <br>
+            <input type="radio" id="seguro" name="seguro" value="basico" required>Basico ${{precio * 0.25}}
+            <br>
+            <input type="radio" id="seguro" name="seguro" value="completo" required>Completo ${{precio * 0.40}}
+            </label>
+            <br>
+            <a href="datos_seguros">Leer mas acerca del Seguro</a>
+            <br>
+            <br>
+            <label for="metodo_pago">Seleccione su Metodo de Pago💵🤑: </label>
+            <br>
+            <label for="">Ciber Week 15% de descuento pagando con credito</label>
+            <br>
+            <input type="radio" id="metodo_pago" name="metodo_pago" value="credito" required>Tarjeta de Credito 💳
+            <br>
+            <input type="radio" id="metodo_pago" name="metodo_pago" value="Debito" required>Tarjeta de Debito 💳
+            <br>
+            <label for="numero_tarjeta">Ingrese el numero de su tarjeta 💳: </label>
+            <input type="tel" name="numero_tarjeta" id="numero_tarjeta" placeholder="1234567890123456" required>
+            <br>
+            <label for="titular_tarjeta">Titular de la Tarjeta: </label>
+            <input type="tel" name="titular_tarjeta" id="titular_tarjeta" required>
+            <br>
+            me quede aca estaba por agregar los asientos del avion para que elijan y dependiendo de cual elijan el costo sera mayor o quedara
+            igual y ademas tengo que agregar la clase que quieren aunque a esto lo podria poner aca porque estaba pensando en ponerlo antes pero
+            me parece mejor aca asi saco calculo de todos y el usuario puede ver como va cmabiando el precio dependiendo de lo que le agrega
+            <button type="submit">Enviar</button>
+            </form>
+</body>
+</html>
