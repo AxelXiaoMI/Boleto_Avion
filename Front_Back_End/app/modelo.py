@@ -72,27 +72,71 @@ def comprar_boleto(vuelos, aerolinea, precio):
             return redirect(url_for('calculo_total', vuelos = vuelos, aerolinea = aerolinea, total = total, cant_menores = cant_menores, adultos= adultos, precio = precio))
     return render_template("comprar_boleto.html", total = total, cant_menores = cant_menores, adultos= adultos, boton_especial = boton_especial)
 
-@app.route("/calculo_total<vuelos><aerolinea><int:total><int:cant_menores><int:adultos>, <float:precio>")
+@app.route("/calculo_total<vuelos><aerolinea><int:total><int:cant_menores><int:adultos>, <float:precio>", methods=['GET', 'POST'])
 def calculo_total(vuelos, aerolinea, total, cant_menores, adultos, precio):
-    step = 1
+    step = 2
+    boton = False
     if request.method == 'POST':
         if step == 1:
-            cant_menores + adultos
-            nombre = request.form['nombre']
-            apellido = request.form['apellido']
-            pais_residencia = request.form['pais_residencia']
-            tipo_documento = request.form['tipo_documento']
-            num_documento = request.form['num_documento']
-            email = request.form['email']
-            fecha_nacimiento = request.form['fecha_nacimiento']
-            sexo = request.form['sexo']
+            
+            for a in range (adultos):    
+                nombre = request.form[f'nombre_{a +1}_a']
+                apellido = request.form[f'apellido_{a +1}_a']
+                pais_residencia = request.form[f'pais_residencia_{a +1}_a']
+                tipo_documento_a = request.form[f'tipo_documento_{a +1}_a']
+                num_documento = request.form[f'num_documento_{a +1}_a']
+                email = request.form[f'email_{a +1}_a']
+                fecha_nacimiento = request.form[f'fecha_nacimiento_{a +1}_a']
+                sexo = request.form[f'sexo_{a +1}_a']
+                cursor = conexion.connection.cursor()
+                cursor.execute('INSERT INTO pasajero (nombre, apellido, pais_residencia, tipo_documento, num_documento, email, fecha_nacimiento, sexo) VALUES (%s, %s, %s, %s, %s, %s, %s, %s);', (nombre, apellido, pais_residencia, tipo_documento_a, num_documento, email, fecha_nacimiento, sexo))
+                cursor.connection.commit()
+
+            for b in range (cant_menores):    
+                nombre = request.form[f'nombre_{b +1}_m']
+                apellido = request.form[f'apellido_{b +1}_m']
+                pais_residencia = request.form[f'pais_residencia_{b +1}_m']
+                tipo_documento_m = request.form[f'tipo_documento_{b +1}_m']
+                num_documento = request.form[f'num_documento_{b +1}_m']
+                email = request.form[f'email_{b +1}_m']
+                fecha_nacimiento = request.form[f'fecha_nacimiento_{b +1}_m']
+                sexo = request.form[f'sexo_{b +1}_m']
+                cursor = conexion.connection.cursor()
+                cursor.execute('INSERT INTO pasajero (nombre, apellido, pais_residencia, tipo_documento, num_documento, email, fecha_nacimiento, sexo) VALUES (%s, %s, %s, %s, %s, %s, %s, %s);', (nombre, apellido, pais_residencia, tipo_documento_m, num_documento, email, fecha_nacimiento, sexo))
+                cursor.connection.commit()
+        
+        elif step == 2:
+            clase = request.form['clase']
+            #Me quede aca y estoy arreglando la ultima parte del formulario para que el codigo ande correctamente
+            #Me quedaria poner los limites de caracteres en los formularios de html y hacer la pagina de inicio y resumen en donde se muestra toda la cuenta del total
+            print(clase)
+            cursor = conexion.connection.cursor()
+            cursor.execute('INSERT INTO asientos (clase) VALUES (%s) ;', (clase))           
+            
             seguro = request.form['seguro']
-            metodo_pago = request.form['metodo_pago']
-            step = request.form['step']
+            cursor.execute('INSERT INTO boleto (seguro) VALUES (%s);', (seguro))
+            
+            # metodo_pago = request.form['metodo_pago']
+            # numero_tarjeta = request.form['numero_tarjeta']
+            # titular_tarjeta = request.form['titular_tarjeta']
+            # vencimiento_tarjeta = request.form['vencimiento_tarjeta']
+            # cod_seguridad_tarjeta = request.form['cod_seguridad_tarjeta']
+            # dni_tarjeta = request.form['dni_tarjeta']
+            # sexo_tarjeta = request.form['sexo_tarjeta']
+            # cuotas_tarjeta = request.form['cuotas_tarjeta']
+            # cursor.execute('INSERT INTO pagos (metodo_pago, numero_tarjeta, titular_tarjeta, vencimiento_tarjeta, cod_seguridad_tarjeta, dni_tarjeta, sexo_tarjeta, cuotas_tarjeta) VALUES (%s, %s, %s, %s, %s, %s, %s, %s);', (metodo_pago, numero_tarjeta, titular_tarjeta, vencimiento_tarjeta, cod_seguridad_tarjeta, dni_tarjeta, sexo_tarjeta, cuotas_tarjeta))
+
+            # cursor.connection.commit()
+            
+            # step = request.form['step']
             
 
-    return render_template("completar_datos.html", vuelos = vuelos, aerolinea = aerolinea, total = total, cant_menores = cant_menores, adultos = adultos, precio = precio, step = step)
+    return render_template("completar_datos.html", vuelos = vuelos, boton = boton, aerolinea = aerolinea, total = total, cant_menores = cant_menores, adultos = adultos, precio = precio, step = step)
 
+
+@app.route("/datos_clases")
+def datos_clases():
+    return render_template("datos_clases.html")
 
 @app.route("/datos_seguros")
 def datos_seguros():
