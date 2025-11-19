@@ -8,10 +8,10 @@
         <h5>Los niños mayores o iguales a 13 años pagan como adulto</h5>
         <form action="" method="post">
             <label for="cantidad_personas_adultas">Cantidad de personas ADULTAS a viajar (+18)</label>
-            <input type="number" name="cantidad_personas_adultas" id="cantidad_personas_adultas" value={{adultos}} placeholder="1" required>
+            <input type="number" name="cantidad_personas_adultas" id="cantidad_personas_adultas" value={{adultos}} placeholder="1" min="1" max="50" required>
             <br>
             <label for="cantidad_personas_menores">Cantidad de personas MENORES a viajar (-17)</label>
-            <input type="number" name="cantidad_personas_menores" id="cantidad_personas_menores" value={{cant_menores}} placeholder="0" required>
+            <input type="number" name="cantidad_personas_menores" id="cantidad_personas_menores" value={{cant_menores}} placeholder="0" min="0" max="50" required>
             <br>
         {% if boton_especial == False and cant_menores == 0 %}
             <input type="hidden" name="act_calculo" value="True">
@@ -22,7 +22,7 @@
         {% elif boton_especial == True %}
             {% for menor in range (cant_menores) %}    
             <label for="edad_niños_{{menor +1}}">Digite la edad del niño {{menor + 1}}</label>
-            <input type="number" name="edad_niños_{{menor + 1}}" id="edad_niños_{{menor + 1}}" placeholder="1" required>
+            <input type="number" name="edad_niños_{{menor + 1}}" id="edad_niños_{{menor + 1}}" placeholder="1" max="17" required>
             <input type="hidden" name="act_calculo" value="True">
             <br>
             {% endfor %}
