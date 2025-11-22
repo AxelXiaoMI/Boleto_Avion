@@ -1,7 +1,6 @@
 from flask import Flask, render_template, url_for, redirect, jsonify, request, flash
 from flask_mysqldb import MySQL
 
-#Esto no se que hace debo buscar y escribir que hace
 app = Flask(__name__)
 
 #Datos para la conexion con la base de datos en este caso es MySQL Workbench
@@ -11,9 +10,7 @@ app.config['MYSQL_PASSWORD'] = 'xiao'
 app.config['MYSQL_DB'] = 'ticket_airplane'
 conexion = MySQL(app)
 
-# app.secret_key = "llave_secreta"
 
-#Para poner una direccion hay que usar el @app.route("/") y luego de la / ponemos la URL que queramos
 @app.route("/inicio")
 def inicio():
     return render_template("pagina_inicio.html")
@@ -129,9 +126,9 @@ def calculo_total(vuelos, aerolinea, cant_menores, adultos, precio):
             precio_seguro = 0
 
         if metodo_pago == 'credito':
-            cuenta_total = ((precio * adultos) + (precio * cant_menores) + precio_seguro) * 0.85
+            cuenta_total = ((precio * adultos) + (precio * cant_menores * 0.6) + precio_seguro) * 0.85
         else:
-            cuenta_total = ((precio * adultos) + (precio * cant_menores) + precio_seguro)
+            cuenta_total = ((precio * adultos) + (precio * cant_menores * 0.6) + precio_seguro)
         
         precio_pagar_cuota = cuenta_total / int(cuotas_tarjeta)
         return render_template("cuenta_total.html",precio_pagar_cuota = precio_pagar_cuota, cuenta_total = cuenta_total, vuelos = vuelos, aerolinea = aerolinea, cant_menores = cant_menores, adultos = adultos, precio = precio, )
