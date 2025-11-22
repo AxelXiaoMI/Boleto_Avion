@@ -6,7 +6,7 @@
     <title>Datos</title>
 </head>
 <body>
-    <h1>Complete los siguientes datos 😁</h1>
+    <h1>Complete los siguientes datos </h1>
     {% for adulto in range(adultos) %}
         <h4>Adulto {{adulto +1}}</h4>
         <form action="" method="POST">
@@ -80,17 +80,17 @@
             <br>
             {% endfor %}
             <br>
-            <label for="clase">Elija en que clase quiere viajar ✈️: </label>
+            <label for="clase">Elija en que clase quiere viajar : </label>
             <br>
-            <input type="radio" id="clase" name="clase" value="economica" required>Economica 🥲 (${{precio}})
+            <input type="radio" id="clase" name="clase" value="economica" required>Economica  (${{precio}})
             <br>
-            <input type="radio" id="clase" name="clase" value="premium" required>Premium 😁 (${{precio * 1.5}})
+            <input type="radio" id="clase" name="clase" value="premium" required>Premium  (${{precio * 1.5}})
             <br>
-            <input type="radio" id="clase" name="clase" value="super_premium" required>Super Premium 🤑 (${{precio * 2.25}})
+            <input type="radio" id="clase" name="clase" value="super_premium" required>Super Premium  (${{precio * 2.25}})
             <br>
             <a href="/datos_clases">Leer mas acerca de las Clases</a>
             <br><br>
-            <label for="">Elija que seguro quiere 🛡️:
+            <label for="">Elija que seguro quiere :
             <br>
             <input type="radio" id="seguro" name="seguro" value="ninguno" required>Ninguno $0
             <br>
@@ -101,20 +101,20 @@
             <br>
             <a href="datos_seguros">Leer mas acerca del Seguro</a>
             <br><br>
-            <label for="metodo_pago">Seleccione su Metodo de Pago💵🤑: </label>
+            <label for="metodo_pago">Seleccione su Metodo de Pago: </label>
             <br>
             <label for="">Ciber Week 15% de descuento pagando con tarjeta de credito</label>
             <br>
-            <input type="radio" id="metodo_pago" name="metodo_pago" value="credito" required>Tarjeta de Credito 💳 (15% OFF)
+            <input type="radio" id="metodo_pago" name="metodo_pago" value="credito" required>Tarjeta de Credito  (15% OFF)
             <br>
-            <input type="radio" id="metodo_pago" name="metodo_pago" value="debito" required>Tarjeta de Debito 💳
+            <input type="radio" id="metodo_pago" name="metodo_pago" value="debito" required>Tarjeta de Debito 
             <br><br>       
-            <label for="">Datos de la Tarjeta 💳: </label>
+            <label for="">Datos de la Tarjeta : </label>
             <br>
-            <label for="numero_tarjeta">Ingrese el numero de su tarjeta 💳: </label>
+            <label for="numero_tarjeta">Ingrese el numero de su tarjeta : </label>
             <input type="tel" name="numero_tarjeta" id="numero_tarjeta" placeholder="1234567890123456" minlength="14" maxlength="16" required>
             <br>
-            <label for="titular_tarjeta">Titular de la Tarjeta 💳: </label>
+            <label for="titular_tarjeta">Titular de la Tarjeta : </label>
             <input type="text" name="titular_tarjeta" id="titular_tarjeta" placeholder="Juan Perez" maxlength="100" required>
             <br>
             <label for="vencimiento_tarjeta">Vencimiento</label>
