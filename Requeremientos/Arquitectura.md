@@ -21,7 +21,9 @@ La arquitectura está basada en microservicios, permitiendo escalabilidad y fác
 
 ```bash
 
-API Gateway / API Bus: [Descripción]
+[first] crear funciones python que se puedan ejecutar ebn vsc
+
+[En una siguiente etapa]API Gateway / API Bus: [Descripción]
 
 Backend / Microservicios: [Descripción]
 
