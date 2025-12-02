@@ -148,7 +148,7 @@ def datos_seguros():
 def error_404(error):
     return render_template('error_404.html'), 404
 
-'''
+
 @app.route("/registrar_usuario", methods=['GET', 'POST'])
 def registrar_usuario():
 
@@ -191,7 +191,7 @@ def registrar_usuario():
 @app.route("/iniciar_sesion")
 def iniciar_sesion():
     return render_template("iniciar_sesion.html")
-'''
+
 
 if __name__ == "__main__":
     app.register_error_handler(404, error_404)
