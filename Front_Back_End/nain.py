@@ -13,7 +13,7 @@ def ticket_avion():
             print("Instalación completa.")
             print('\n' * 5)
             import psycopg2
-        
+            
         finally:
             print('-' * 100)
             print('Paso Numero 1 Completado (Instalacion de las librearias necesarias)')
@@ -192,7 +192,7 @@ def ticket_avion():
             print('-' * 100)
             print('\nGracias por Comprar su Ticket de Avion Aca estan datos de la Compra: ')
             print(f'\n1.Destino: {destinos[num_destino - 1]}')
-            print(f'2.Cantidad de Personas que Viajan: {cant_personas})')
+            print(f'2.Cantidad de Personas que Viajan: {cant_personas}')
             print(f'3.Datos Pasajeros:')
             print('*' * 60)
             for i in range(cant_personas):
