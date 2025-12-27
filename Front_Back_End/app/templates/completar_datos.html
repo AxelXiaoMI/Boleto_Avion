@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos</title>
+</head>
+<body>
+    <h1>Complete los siguientes datos </h1>
+    {% for adulto in range(adultos) %}
+        <h4>Adulto {{adulto +1}}</h4>
+        <form action="" method="POST">
+            <label for="nombre">Nombre/s: </label>
+            <input type="text" id="nombre" name="nombre_{{adulto +1}}_a" placeholder="Raul" maxlength="100" required>   
+            <br>
+
+            <label for="apellido">Apellido/s: </label>
+            <input type="text" id="apellido" name="apellido_{{adulto +1}}_a" placeholder="Gomez" maxlength="100" required>  
+            <br>
+
+            <label for="pais_residencia">Pais de Residencia: </label>
+            <input type="text" id="pais_residencia" name="pais_residencia_{{adulto +1}}_a" placeholder="Argentina" maxlength="100" required>
+            <br>
+
+            <label for="tipo_documento">Tipo de Documento:</label>
+            <input type="radio" name="tipo_documento_{{adulto +1}}_a" id="tipo_documento" value="DNI" required> DNI
+            <input type="radio" name="tipo_documento_{{adulto +1}}_a" id="tipo_documento" value="Pasaporte" required> Pasaporte
+            <br>
+            <label for="num_documento">Numero: </label>
+            <input type="tel" id="num_documento" name="num_documento_{{adulto +1}}_a" placeholder="1234567890" minlength="8" maxlength="8" required>
+            <br>
+
+            <label for="email">Correo: </label>
+            <input type="email" id="email" name="email_{{adulto +1}}_a" placeholder="ejemplo@ejemplo.com" maxlength="100" required>
+            <br>
+
+            <label for="fecha_nacimiento">Fecha de Nacimiento: </label>
+            <input type="date" id="fecha_nacimiento" name="fecha_nacimiento_{{adulto +1}}_a" required>
+            <br>
+
+            <label for="sexo">Genero: </label>
+            <input type="radio" id="sexo" name="sexo_{{adulto +1}}_a" value="Femenino" required>Femenino
+            <input type="radio" id="sexo" name="sexo_{{adulto +1}}_a" value="Masculino" required>Masculino
+            <br>
+    {% endfor %}
+    {% for menor in range(cant_menores) %}
+        <h4>Niño {{menor + 1}}</h4>
+        
+            <label for="nombre">Nombre/s: </label>
+            <input type="text" id="nombre" name="nombre_{{menor + 1}}_m" placeholder="Raul" maxlength="100" required>   
+            <br>
+
+            <label for="apellido">Apellido/s: </label>
+            <input type="text" id="apellido" name="apellido_{{menor + 1}}_m" placeholder="Gomez" maxlength="100" required>  
+            <br>
+
+            <label for="pais_residencia">Pais de Residencia: </label>
+            <input type="text" id="pais_residencia" name="pais_residencia_{{menor + 1}}_m" placeholder="Argentina" maxlength="100" required>
+            <br>
+
+            <label for="tipo_documento">Tipo de Documento:</label>
+            <input type="radio" name="tipo_documento_{{menor +1}}_m" id="tipo_documento" value="dni" required> DNI
+            <input type="radio" name="tipo_documento_{{menor +1}}_m" id="tipo_documento" value="pasaporte" required> Pasaporte
+            <br>
+            <label for="num_documento">Numero: </label>
+            <input type="tel" id="num_documento" name="num_documento_{{menor + 1}}_m" placeholder="1234567890" minlength="8" maxlength="8" required>
+            <br>
+
+            <label for="email">Correo: </label>
+            <input type="email" id="email" name="email_{{menor + 1}}_m" placeholder="ejemplo@ejemplo.com" maxlength="100" required>
+            <br>
+
+            <label for="fecha_nacimiento">Fecha de Nacimiento: </label>
+            <input type="date" id="fecha_nacimiento" name="fecha_nacimiento_{{menor + 1}}_m"  required>
+            <br>
+
+            <label for="sexo">Genero: </label>
+            <input type="radio" id="sexo" name="sexo_{{menor +1}}_m" value="Femenino" required>Femenino
+            <input type="radio" id="sexo" name="sexo_{{menor +1}}_m" value="Masculino" required>Masculino
+            <br>
+            {% endfor %}
+            <br>
+            <label for="clase">Elija en que clase quiere viajar : </label>
+            <br>
+            <input type="radio" id="clase" name="clase" value="economica" required>Economica  (${{precio}})
+            <br>
+            <input type="radio" id="clase" name="clase" value="premium" required>Premium  (${{precio * 1.5}})
+            <br>
+            <input type="radio" id="clase" name="clase" value="super_premium" required>Super Premium  (${{precio * 2.25}})
+            <br>
+            <a href="/datos_clases">Leer mas acerca de las Clases</a>
+            <br><br>
+            <label for="">Elija que seguro quiere :
+            <br>
+            <input type="radio" id="seguro" name="seguro" value="ninguno" required>Ninguno $0
+            <br>
+            <input type="radio" id="seguro" name="seguro" value="basico" required>Basico ${{precio * 0.25}}
+            <br>
+            <input type="radio" id="seguro" name="seguro" value="completo" required>Completo ${{precio * 0.40}}
+            </label>
+            <br>
+            <a href="datos_seguros">Leer mas acerca del Seguro</a>
+            <br><br>
+            <label for="metodo_pago">Seleccione su Metodo de Pago: </label>
+            <br>
+            <label for="">Ciber Week 15% de descuento pagando con tarjeta de credito</label>
+            <br>
+            <input type="radio" id="metodo_pago" name="metodo_pago" value="credito" required>Tarjeta de Credito  (15% OFF)
+            <br>
+            <input type="radio" id="metodo_pago" name="metodo_pago" value="debito" required>Tarjeta de Debito 
+            <br><br>       
+            <label for="">Datos de la Tarjeta : </label>
+            <br>
+            <label for="numero_tarjeta">Ingrese el numero de su tarjeta : </label>
+            <input type="tel" name="numero_tarjeta" id="numero_tarjeta" placeholder="1234567890123456" minlength="14" maxlength="16" required>
+            <br>
+            <label for="titular_tarjeta">Titular de la Tarjeta : </label>
+            <input type="text" name="titular_tarjeta" id="titular_tarjeta" placeholder="Juan Perez" maxlength="100" required>
+            <br>
+            <label for="vencimiento_tarjeta">Vencimiento</label>
+            <input type="date" name="vencimiento_tarjeta" id="vencimiento_tarjeta" required>
+            <br>
+            <label for="cod_seguridad_tarjeta">Codigo de Seguridad</label>
+            <input type="tel" name="cod_seguridad_tarjeta" id="cod_seguridad_tarjeta" maxlength="3">
+            <br>
+            <label for="dni_tarjeta">DNI del Titular: </label>
+            <input type="tel" name="dni_tarjeta" id="dni_tarjeta" maxlength="8" required>
+            <br>
+            <label for="sexo_tarjeta">Genero: </label>
+            <input type="radio" id="sexo_tarjeta" name="sexo_tarjeta" value="Femenino" required>Femenino
+            <input type="radio" id="sexo_tarjeta" name="sexo_tarjeta" value="Masculino" required>Masculino
+            <br><br>
+            <label for="cuotas_tarjeta">Cantidad de Cuotas que Desea Pagar:</label>
+            <br>
+            <input type="radio" id="cuotas_tarjeta" name="cuotas_tarjeta" value="12" required>12 Cuotas
+            <br>
+            <input type="radio" id="cuotas_tarjeta" name="cuotas_tarjeta" value="6" required>6 Cuotas
+            <br>
+            <input type="radio" id="cuotas_tarjeta" name="cuotas_tarjeta" value="3" required>3 Cuotas
+            <br><br>
+            <button type="submit">Enviar</button>
+        </form>
+</body>
+</html>
